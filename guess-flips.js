@@ -1,3 +1,3 @@
-const args = require('yargs').argv;
-console.log(args.call);
+import argv from 'yargs';
+console.log(argv.call)
 import { flipACoin } from './modules/coin.mjs';

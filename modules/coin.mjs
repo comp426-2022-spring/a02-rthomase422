@@ -60,12 +60,12 @@ export function coinFlips(flips) {
  */
 
 export function countFlips(array) {
-  const count = {};
-  for (const flip of array) {
-    if (count[flip]) {
-      count[flip] += 1;
+  var count = {};
+  for (var flip = 0; flip < array.length; flip++ ) {
+    if (!count.hasOwnProperty(array[flip])) {
+      count[array[flip]] = 1;
     } else {
-      count[flip] = 1;
+      count[array[flip]]++;
     }
   }
   return {'tails': count, 'heads': count}

@@ -60,16 +60,10 @@ export function coinFlips(flips) {
  */
 
 export function countFlips(array) {
-  var count = {};
-  for (var flip = 0; flip < array.length; flip++ ) {
-    if (!count.hasOwnProperty(array[flip])) {
-      count[array[flip]] = 1;
-    } else {
-      count[array[flip]]++;
-    }
-  }
-  return {'tails': count, 'heads': count}
+  const countH = array.toString().match(/heads/g).length;
+  const countT = array.toString().match(/tails/g).length;
   //or console.log(count)
+  return {'heads': countH, 'tails': countT}
 }
 
 /** Flip a coin!

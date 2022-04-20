@@ -87,14 +87,14 @@ export function countFlips(array) {
  */
 
 export function flipACoin(call) {
-  var flip = Math.random() > .5 ? ("heads") : ("tails")
-  var result = '';
+  let flip = coinFlip()
+  let result = '';
   if (flip == call) {
     result = 'win';
   } else {
     result = 'lose';
   }
-  return {'call': call, 'flip': flip, 'result': result}
+  return {call: call, flip: flip, result: result}
 }
 
 

@@ -6,10 +6,11 @@ import { coinFlips, countFlips } from './modules/coin.mjs';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 var args = require('yargs')(process.argv.slice(2));
-args['number']
+//args['number']
 const number = args.number;
+
 if (number == null) {
-    var flip = coinFlips(1);
+    let flip = coinFlips(1);
     console.log(flip);
 
     if (flip == ['heads']) {

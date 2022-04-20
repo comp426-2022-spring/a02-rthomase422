@@ -60,16 +60,19 @@ export function coinFlips(flips) {
  */
 
 export function countFlips(array) {
-  const count = {};
-  for (let i = 0; i < array.length; i++) {
-    const flip = array[i];
-    if (count[flip]) {
-      count[flip] += 1;
-    } else {
-      count[flip] = 1;
+  let h = 0;
+  let t = 0;
+  for (let i of array) {
+    if (i == 'heads'.valueOf()) {
+      h++;
+    }
+    if (i == 'tails'.valueOf()) {
+      t++;
+
     }
   }
-  console.log(count)
+  return {heads: h, tails: t};
+
 }
 
 /** Flip a coin!

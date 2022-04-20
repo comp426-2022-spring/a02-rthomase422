@@ -3,14 +3,16 @@
 import { flipACoin } from './modules/coin.mjs';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-var argv = require('yargs')(process.argv.slice(2))
-    //.scriptName("guess-flips")
-    .usage("node guess-flip --call=[heads|tails]")
-    .alias('c', 'call')
-    .choices('c', ['heads', 'tails'])
-    .strict()
-    .argv
-;
-const call = argv.call || process.env.CALL
+const args = require('yargs')(process.argv.slice(2));
+args['call']
+const call = args.call || process.env.CALL
+if (call == null) {
+    console.log("Error: no input.")
+    console.log("Usage: node guess-flip --call=[heads|tails]")
+} else if (call != "heads" && call != "tails") {
+    console.log("Error: not a valid input (heads or tails).")
+    console.log("Usage: node guess-flip --call=[heads|tails]")
+} else {
+    console.log(flipACoin(call))
+}
 
-console.log(flipACoin(call))

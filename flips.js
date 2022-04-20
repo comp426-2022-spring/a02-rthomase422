@@ -7,7 +7,7 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 var args = require('yargs')(process.argv.slice(2));
 //args['number']
-const number = args.number;
+const number = args.number ||  process.env.NUMBER || 1
 
 if (number == null) {
     let flip = coinFlips(1);

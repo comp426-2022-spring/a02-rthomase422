@@ -38,16 +38,16 @@ export function coinFlip() {
  */
 
 export function coinFlips(flips) {
-  var array = new Array();
+  var temp = new Array();
   if (flips < 1 || typeof flips == 'undefined') {
     flips = 1;
   }
   for (var i = 0; i < flips; i++) {
     //var coin = Math.random > .5 ? ("heads") : ("tails");
 
-    array.push(coinFlip());
+    temp.push(coinFlip());
   }
-  return array;
+  return temp;
 }
 
 /** Count multiple flips

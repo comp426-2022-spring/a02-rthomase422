@@ -39,9 +39,13 @@ export function coinFlip() {
 
 export function coinFlips(flips) {
   var array = new Array();
+  if (flips < 1 || typeof flips == 'undefined') {
+    flips = 1;
+  }
   for (var i = 0; i < flips; i++) {
-    var coin = Math.random > .5 ? ("heads") : ("tails");
-    array.push(coin);
+    //var coin = Math.random > .5 ? ("heads") : ("tails");
+
+    array.push(coinFlip());
   }
   return array;
 }
@@ -62,11 +66,11 @@ export function coinFlips(flips) {
 export function countFlips(array) {
   let h = 0;
   let t = 0;
-  for (let i of array) {
-    if (i == 'heads'.valueOf()) {
+  for (let i  = 0; i < array.length; i++) {
+    if (array[i] == 'heads') {
       h++;
     }
-    if (i == 'tails'.valueOf()) {
+    if (array[i] == 'tails') {
       t++;
 
     }

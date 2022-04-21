@@ -76,7 +76,7 @@ export function countFlips(array) {
     }
   }
   return {heads: h, tails: t};
-
+ 
 }
 
 /** Flip a coin!

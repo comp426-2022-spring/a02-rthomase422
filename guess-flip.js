@@ -10,3 +10,4 @@ if (call == "heads" || call == "tails") {
     console.log("Error: no inputs\nUsage: node guess-flip --call=[heads|tails]")
 }
 
+

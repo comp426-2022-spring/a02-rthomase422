@@ -9,20 +9,8 @@ var args = require('yargs')(process.argv.slice(2));
 //args['number']
 const number = args.number ||  process.env.NUMBER || 1
 
-if (number == null) {
-    let flip = coinFlips(1);
-    console.log(flip);
-
-    if (flip == ['heads']) {
-        console.log('{ heads: 1 }');
-    }
-    else { 
-        console.log('{ tails: 1 }');
-    }
-} else {
     
     let flip = coinFlips(number);
     console.log(flip);
     console.log(countFlips(flip))
 
-}

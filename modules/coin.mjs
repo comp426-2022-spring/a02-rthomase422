@@ -61,7 +61,7 @@ export function coinFlips(flips) {
  * 
  * @param {string[]} array 
  * @returns {{ heads: number, tails: number }}
- */ 
+ */  
 
 export function countFlips(array) {
   let h = 0;
